@@ -3,7 +3,21 @@ import cors from "cors";
 import { pool } from "./db.js";
 
 const app = express();
-app.use(cors());
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5500",
+      "http://127.0.0.1:5500",
+      "https://khizarq313.github.io"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
+
+app.options("*", cors());
+
 app.use(express.json());
 
 const STEPS_COUNT = 7;
