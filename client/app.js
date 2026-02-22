@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";
+const API = "https://releasecheck-api-pue8.onrender.com";
 const STEPS = [
   "GitHub PR merged",
   "Changelog updated",
